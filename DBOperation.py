@@ -20,6 +20,7 @@ class DBOperation(object) :
     #@staticmethod
 
     def initialization(self):
+        print "---DBO.initialization called"
         banana = 'sophia'
         apple = 'xfgcj1314'
         banana = ed.enDecryption.encryption(banana)
@@ -53,15 +54,15 @@ class DBOperation(object) :
             elif tableName == 'cost':
                 createTBCommand = "CREATE TABLE IF NOT EXISTS "+ str(tableName)+ self.TBCostInfo
             initCommand = self.initialization()
-            #print "init Command : ",initCommand
+            print "init Command : ",initCommand
             self.cursor.execute(createTBCommand)
             #self.conn.commit()
             #self.conn = sql.connect(self.DB_DIR)
-            #print "executing initCommand"
+            print "executing initCommand"
             self.cursor.execute(initCommand)
             self.customizedFetch(initCommand)
             r = self.fetchAllData('user')
-            #print "r : ",r
+            print "r : ",r
         except :
             self.closeConnection(self.conn)
 
