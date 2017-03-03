@@ -20,7 +20,11 @@ class DBOperation(object) :
     #@staticmethod
 
     def initialization(self):
+<<<<<<< HEAD
         print "---DBO.initialization called..---something in main branch"
+=======
+        print "---DBO.initialization called..---"
+>>>>>>> 45dd53973553dee5f0747ce9f1670704f523a62b
         banana = 'sophia'
         apple = 'xfgcj1314'
         banana = ed.enDecryption.encryption(banana)
