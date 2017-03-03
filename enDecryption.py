@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import base64 as bs
 import re
 

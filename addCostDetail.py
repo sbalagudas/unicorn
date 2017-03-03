@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import wx
 import login
 import common as cmm

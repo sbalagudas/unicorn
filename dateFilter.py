@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import DBOperation
 import common as cmm
 

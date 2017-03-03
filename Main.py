@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import wx
 import timeDisplay
 import common as cmm

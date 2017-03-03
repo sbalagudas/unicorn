@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import wx
 from DBOperation import DBOperation as dbo
 import time

@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import wx
 import time
 import threading
