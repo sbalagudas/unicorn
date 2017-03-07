@@ -4,6 +4,7 @@ class Paint(wx.Panel):
     def __init__(self,parent,ID):
         wx.Panel.__init__(self,parent,ID)
         self.SetBackgroundColour('White')
+        print "xxxx"
         self.color='Black'
         self.thickness = 1
         #1
