@@ -11,8 +11,8 @@ class costDataFrame(wx.Frame):
         wx.Frame.__init__(self,parent,id,title,pos,size)
         self.costNameForDB = costName
         (sizer,self.textList) = cmm.createStaticTextControl(self,self.costDataInfo(costName),fonts.Fonts.romanBold12())
+        self.textList[1].SetBackgroundColour('#CCFFCC')
         self.textList[3].SetBackgroundColour('#CCFFCC')
-        self.textList[5].SetBackgroundColour('#CCFFCC')
         self.textList[5].SetBackgroundColour('#CCFFCC')
         for i in range(0,6):
             self.textList[i].SetForegroundColour('Blue')
@@ -64,7 +64,8 @@ class costDataFrame(wx.Frame):
         return costDataSizer
 
     def onAddCost(self,event):
-        value = self.textList[3].GetLabelText()
+        #value = self.textList[3].GetLabelText()
+        value = self.textList[3].GetValue()
         comments = self.textList[5].GetLabelText()
         if '.' in str(value):
             value = value[:str(value).rfind('.')]

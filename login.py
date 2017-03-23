@@ -60,9 +60,10 @@ class logInPanel(wx.Panel):
         db = dbo()
         #db.initialization()
         #print "self.textList : ",self.textList
-        self.userName = self.textList[1].GetLabelText()
+        #self.userName = self.textList[1].GetLabelText()
+        self.userName = self.textList[1].GetValue()
         #print "user name : ",self.userName
-        password = self.textList[3].GetLabelText()
+        password = self.textList[3].GetValue()
         #print "password : ",password
         enUserName = ed.enDecryption.encryption(self.userName)
         enUserName.strip()
