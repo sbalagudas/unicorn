@@ -89,30 +89,27 @@ class dataPanel(wx.Panel):
         return self.blackBox
 
     def blackBoxEnter(self,event):
-        command = self.blackBox.GetLabelText()
+        command = self.blackBox.GetValue()
         command.strip()
         if 'costDate' not in command :
+            varOld = ""
             if 'like' in command or 'LIKE' in command :
-                #print "command : ",command
                 varOld = command[command.find('\'')+1 : command.rfind('%')]
-                #print "varOld : ",varOld
             elif '=' in command :
                 varOld = command[command.find('\'')+1 : command.rfind('\'')]
-                #print "varOld : ",varOld
             varNew = ed.enDecryption.encryption(varOld)
             varNew.strip()
-            #print "varNew : ",varNew
             command = command.replace(varOld,varNew)
-        else :
-            pass
 
         dbo = DBOperation.DBOperation()
         raw = dbo.customizedFetch(command)
         (data,label) = cmm.decryptionList(raw)
+        print "enter 111"
         table = basicTable(data,rowLabel=label,colLabel=("Name","Money","Comments"))
         self.grid.SetTable(table)
         self.__setGridAttributes()
         self.Refresh()
+        print "enter 222"
 
     def createTotalBox(self,parent):
         totalBoxInfo = [("Total : ",wx.ROMAN,'static'),(wx.TE_NOHIDESEL|wx.TE_READONLY,'ctrl'),]
@@ -243,7 +240,7 @@ class tableGridFrame(wx.Frame):
         wx.Frame.__init__(self,parent,id,title,pos,size)
         #(year,month,day) = self.getYearMonthDayFromCbx()
         #(tableData,tableLabel) = cmm.getAndConvertCostData()
-        self.panel = dataPanel(self,-1,tableData,tableLabel)
+        self.panel = dataPanel(self,-1,'','')
 
         width, height = self.GetClientSizeTuple()
 
