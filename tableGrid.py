@@ -104,15 +104,15 @@ class dataPanel(wx.Panel):
         dbo = DBOperation.DBOperation()
         raw = dbo.customizedFetch(command)
         (data,label) = cmm.decryptionList(raw)
-        print "enter 111"
+        total = cmm.calculatingTotalCost(data)
+        self.totalBoxList[1].SetValue(str(total))        
         table = basicTable(data,rowLabel=label,colLabel=("Name","Money","Comments"))
         self.grid.SetTable(table)
         self.__setGridAttributes()
         self.Refresh()
-        print "enter 222"
 
     def createTotalBox(self,parent):
-        totalBoxInfo = [("Total : ",wx.ROMAN,'static'),(wx.TE_NOHIDESEL|wx.TE_READONLY,'ctrl'),]
+        totalBoxInfo = [("T:",wx.ROMAN,'static'),(wx.TE_NOHIDESEL|wx.TE_READONLY,'ctrl'),]
         (self.totalBoxSizer,self.totalBoxList) = cmm.createStaticTextControl(parent,totalBoxInfo,fonts.Fonts.romanBold14())
         self.totalBoxList[0].SetForegroundColour('Blue')
         self.totalBoxList[1].SetForegroundColour('Blue')
