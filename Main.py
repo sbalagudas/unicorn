@@ -24,7 +24,7 @@ class mainFrame(wx.Frame):
         self.tableGrid.grid.SetDefaultColSize((width-253)/4.0,True)
         self.tableGrid.grid.SetRowLabelSize((width-253)/4.6)
 
-        #set UI colors.
+        #set UI colors...
         #ADEAEA,'#66CCCC'
         self.colorSet = ['#CCFFCC',"#CCFFCC"]
         self.changeUIColor(self.colorSet)
