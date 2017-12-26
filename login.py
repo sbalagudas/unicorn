@@ -59,7 +59,7 @@ class logInPanel(wx.Panel):
     def authentication(self,event):
         db = dbo()
         #db.initialization()
-        #print "self.textList : ",self.textList
+        ###print "self.textList : ",self.textList
         #self.userName = self.textList[1].GetLabelText()
         self.userName = self.textList[1].GetValue()
         #print "user name : ",self.userName
